@@ -11,11 +11,21 @@ import {
   Button,
 } from '@chakra-ui/react';
 
-export const LocationClicked = ({ imageLink }) => {
+export const LocationClicked = ({ singleItem }) => {
+  // useEffect(() => {
+  //   const refresh = () => {
+  //     let resultData = fetchTraffic(date, time);
+  //     resultData.then(data => {
+  //       setRes(data);
+  //     });
+  //   };
+  //   refresh();
+  // }, [date, time]);
+
   return (
     <Center m={4}>
       <Box>
-        <Image src={imageLink} />
+        <Image src={singleItem.image} htmlWidth={640} />
       </Box>
     </Center>
   );

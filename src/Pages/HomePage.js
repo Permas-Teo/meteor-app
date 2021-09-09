@@ -18,7 +18,6 @@ const HomePage = () => {
       let resultData = fetchTraffic(date, time);
       resultData.then(data => {
         setRes(data);
-        // console.log(data);
       });
     };
     refresh();

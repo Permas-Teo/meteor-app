@@ -21,7 +21,7 @@ export const QueryFilter = ({ date, setDate, time, setTime }) => {
       bg={'whiteAlpha.100'}
       boxShadow={'xl'}
       rounded={'lg'}
-      p={6}
+      p={[3, 6]}
       direction={'column'}
     >
       <Heading as={'h2'} fontSize={['lg', '2xl']} textAlign={'center'} my={5}>
@@ -29,11 +29,16 @@ export const QueryFilter = ({ date, setDate, time, setTime }) => {
       </Heading>
 
       <Stack direction={'column'} as={'form'} spacing={'12px'}>
-        <DatePicker onChange={onChangeDate} size={'large'} />
+        <DatePicker
+          onChange={onChangeDate}
+          size={'large'}
+          placeholder={'Date'}
+        />
         <TimePicker
           onChange={onChangeTime}
           // defaultValue={moment('00:00:00', 'HH:mm:ss')}
           size={'large'}
+          placeholder={'Time'}
         />
       </Stack>
     </Container>

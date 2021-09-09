@@ -32,23 +32,23 @@ export const Location = ({ singleItem }) => {
         bg={'whiteAlpha.100'}
         boxShadow={'lg'}
         rounded={'lg'}
-        p={[2, 4]}
+        p={[0, 4]}
         direction={'column'}
       >
         <Flex>
-          <Box>
+          <Box py={[2, 0]} pl={[2, 0]}>
             <Text fontSize={['md', '2xl']}>{closestLocation}</Text>
             {/* <Text>{singleItem.location.longitude}</Text>
             <Text>{singleItem.location.latitude}</Text> */}
           </Box>
           <Spacer />
-          <Box>
+          <Box py={[2, 0]} pr={[2, 0]}>
             <Button onClick={() => setOpen(true)} size={buttonSize}>
               Show
             </Button>
           </Box>
         </Flex>
-        {open && <LocationClicked imageLink={singleItem.image} />}
+        {open && <LocationClicked singleItem={singleItem} />}
       </Container>
     </Center>
   );
