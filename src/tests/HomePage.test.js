@@ -5,6 +5,6 @@ import HomePage from '../Pages/HomePage';
 
 test('renders home page text', () => {
   render(<HomePage />);
-  const textElement = screen.getByText(/csv upload/i);
+  const textElement = screen.getByText(/Live Filter/i);
   expect(textElement).toBeInTheDocument();
 });
