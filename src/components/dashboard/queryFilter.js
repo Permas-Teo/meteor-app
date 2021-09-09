@@ -43,6 +43,7 @@ export const QueryFilter = ({ date, setDate, time, setTime }) => {
                 onChange={onChangeTime}
                 // defaultValue={moment('00:00:00', 'HH:mm:ss')}
                 size={'large'}
+                disabled={!date}
                 placeholder={'Time'}
               />
             </Stack>

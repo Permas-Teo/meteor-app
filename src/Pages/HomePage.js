@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../components/layout';
-import { Box, Container, Flex } from '@chakra-ui/react';
 import { QueryFilter } from '../components/dashboard/queryFilter';
 import { fetchTraffic, fetchWeather } from '../api/api';
 import { LocationList } from '../components/dashboard/locationList';
