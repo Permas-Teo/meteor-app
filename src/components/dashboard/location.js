@@ -5,10 +5,8 @@ import {
   Container,
   Flex,
   Spacer,
-  Icon,
   Text,
   Button,
-  VStack,
   useBreakpointValue,
 } from '@chakra-ui/react';
 import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
@@ -19,7 +17,6 @@ import {
 import { LocationClicked } from './locationClicked';
 
 export const Location = ({ singleItem, weatherData }) => {
-  const [weather, setWeather] = useState('');
   const [open, setOpen] = useState(false);
 
   const buttonSize = useBreakpointValue(['xs', 'md']);

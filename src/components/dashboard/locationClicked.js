@@ -1,49 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import {
-  Box,
-  Center,
-  Image,
-  Divider,
-  Container,
-  Flex,
-  Spacer,
-  Icon,
-  Text,
-  Button,
-  VStack,
-} from '@chakra-ui/react';
+import React from 'react';
+import { Box, Center, Image, Divider, Text, VStack } from '@chakra-ui/react';
 import { getImageSrcFromForecast } from '../../utils/utilFunctions';
 
 export const LocationClicked = ({ singleItem, forecast }) => {
-  const [weather, setWeather] = useState('');
-
-  // useEffect(() => {
-  //   const refresh = () => {
-  //     let resultData = fetchWeather(singleItem.timestamp);
-  //     resultData.then(data => {
-  //       console.log(data);
-  //       setWeather(data);
-  //     });
-  //   };
-  //   refresh();
-  // }, []);
-
-  // const forecast =
-
   return (
     <Center>
       <VStack>
         <Divider mt={2} />
-        <Box p={[0, 4]}>
+        <Box p={[0, 2]}>
           <Center>
             <Image
               src={getImageSrcFromForecast(forecast)}
               boxSize={['50px', '80px']}
             />
           </Center>
-          <Text fontSize={['md', 'xl']}>{forecast}</Text>
+          <Text mt={2} fontSize={['md', 'xl']}>
+            {forecast}
+          </Text>
         </Box>
-        <Divider mb={2} />
+        <Divider />
         <Box>
           <Image src={singleItem.image} htmlWidth={640} />
         </Box>

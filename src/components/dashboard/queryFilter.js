@@ -1,17 +1,14 @@
 import React from 'react';
-import { Button, Container, Center, Heading, Stack } from '@chakra-ui/react';
-
+import { Container, Heading, Stack } from '@chakra-ui/react';
 import { DatePicker, TimePicker } from 'antd';
-import moment from 'moment';
+// import moment from 'moment';
 
 export const QueryFilter = ({ date, setDate, time, setTime }) => {
   function onChangeDate(date, dateString) {
-    console.log(date, dateString);
     setDate(dateString);
   }
 
   function onChangeTime(time, timeString) {
-    console.log(time, timeString);
     setTime(timeString);
   }
 

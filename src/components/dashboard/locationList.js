@@ -1,19 +1,8 @@
-import React, { useState } from 'react';
-import {
-  Box,
-  Center,
-  Container,
-  Flex,
-  Spacer,
-  Icon,
-  Text,
-  Button,
-} from '@chakra-ui/react';
+import React from 'react';
 import { Location } from './location';
 
 export const LocationList = ({ trafficData, weatherData }) => {
   const camerasArr = trafficData.items[0].cameras;
-  console.log(camerasArr);
   return (
     <>
       {camerasArr.length > 0 && (

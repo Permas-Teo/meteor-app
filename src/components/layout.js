@@ -61,7 +61,7 @@ export default function Layout({ children }) {
               aria-label={'Toggle Navigation'}
             />
           </Flex>
-          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+          <Flex flex={{ base: 0 }} justify={{ base: 'center', md: 'start' }}>
             <Icon color={'pink.400'} w={7} h={7} as={MoonIcon} />
             <Flex display={{ base: 'none', md: 'flex' }} ml={5}>
               <DesktopNav />

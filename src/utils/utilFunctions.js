@@ -30,7 +30,6 @@ export function getForecastFromLocation(location, forecasts) {
       return forecast.forecast;
     }
   }
-
   return 'Not Available :(';
 }
 
