@@ -2,9 +2,12 @@
 
 ## 1. Credits
 
-Initial template reused from [my own TAP ESTL Assignment](https://github.com/Permas-Teo/salary-app)
+Initial template reused from [my own TAP ESTL Assignment](https://github.com/Permas-Teo/salary-app).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Navigation Bar component referenced from https://chakra-templates.dev/
+
+Navigation Bar component referenced from https://chakra-templates.dev/.
+
 Weather Icons made by Pixel perfect from [Flaticon](www.flaticon.com)
 
 ## 2. Setup Instructions
