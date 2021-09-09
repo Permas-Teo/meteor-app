@@ -3,11 +3,12 @@ import Layout from '../components/layout';
 import { Box, Container, Flex, Text } from '@chakra-ui/react';
 import { QueryFilter } from '../components/dashboard/queryFilter';
 import { Alerts } from '../components/dashboard/alerts';
-import { fetchTraffic } from '../api/api';
+import { fetchTraffic, fetchWeather } from '../api/api';
 import { LocationList } from '../components/dashboard/locationList';
 
 const HomePage = () => {
-  const [res, setRes] = useState('');
+  const [trafficData, setTrafficData] = useState('');
+  const [weatherData, setWeatherData] = useState('');
   const [requestUpdate, setRequestUpdate] = useState(new Date());
 
   const [date, setDate] = useState('');
@@ -15,9 +16,14 @@ const HomePage = () => {
 
   useEffect(() => {
     const refresh = () => {
-      let resultData = fetchTraffic(date, time);
-      resultData.then(data => {
-        setRes(data);
+      const trafficData = fetchTraffic(date, time);
+      trafficData.then(data => {
+        setTrafficData(data);
+      });
+
+      const weatherData = fetchWeather(date, time);
+      weatherData.then(data => {
+        setWeatherData(data);
       });
     };
     refresh();
@@ -48,11 +54,13 @@ const HomePage = () => {
         </Flex>
       </Container>
 
-      {res && <LocationList data={res} />}
+      {trafficData && weatherData && (
+        <LocationList trafficData={trafficData} weatherData={weatherData} />
+      )}
 
-      {/* {res && (
+      {/* {trafficData && (
         <SalaryTable
-          data={res}
+          data={trafficData}
           setSortToggle={setSortToggle}
           page={page}
           setPage={setPage}

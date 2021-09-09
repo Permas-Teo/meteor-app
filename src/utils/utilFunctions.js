@@ -22,3 +22,14 @@ export function getClosestLocation(longitude, latitude) {
 
   return closestLocation;
 }
+
+export function getForecastFromLocation(location, forecasts) {
+  for (const index in forecasts) {
+    const forecast = forecasts[index];
+    if (forecast.area === location) {
+      return forecast.forecast;
+    }
+  }
+
+  return 'Not Available :(';
+}

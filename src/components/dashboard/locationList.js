@@ -11,15 +11,19 @@ import {
 } from '@chakra-ui/react';
 import { Location } from './location';
 
-export const LocationList = ({ data }) => {
-  const camerasArr = data.items[0].cameras;
+export const LocationList = ({ trafficData, weatherData }) => {
+  const camerasArr = trafficData.items[0].cameras;
   console.log(camerasArr);
   return (
     <>
       {camerasArr.length > 0 && (
         <>
           {camerasArr.map(singleItem => (
-            <Location singleItem={singleItem} key={singleItem.camera_id} />
+            <Location
+              singleItem={singleItem}
+              weatherData={weatherData}
+              key={singleItem.camera_id}
+            />
           ))}
         </>
       )}

@@ -1,32 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Center,
   Image,
+  Divider,
   Container,
   Flex,
   Spacer,
   Icon,
   Text,
   Button,
+  VStack,
 } from '@chakra-ui/react';
+import { fetchWeather } from '../../api/api';
 
-export const LocationClicked = ({ singleItem }) => {
+export const LocationClicked = ({ singleItem, forecast }) => {
+  const [weather, setWeather] = useState('');
+
   // useEffect(() => {
   //   const refresh = () => {
-  //     let resultData = fetchTraffic(date, time);
+  //     let resultData = fetchWeather(singleItem.timestamp);
   //     resultData.then(data => {
-  //       setRes(data);
+  //       console.log(data);
+  //       setWeather(data);
   //     });
   //   };
   //   refresh();
-  // }, [date, time]);
+  // }, []);
+
+  // const forecast =
 
   return (
-    <Center m={4}>
-      <Box>
-        <Image src={singleItem.image} htmlWidth={640} />
-      </Box>
+    <Center>
+      <VStack>
+        <Divider />
+        <Box p={[0, 4]}>
+          <Text fontSize={['md', 'xl']}>{forecast}</Text>
+        </Box>
+        <Divider mb={2} />
+        <Box>
+          <Image src={singleItem.image} htmlWidth={640} />
+        </Box>
+      </VStack>
     </Center>
   );
 };

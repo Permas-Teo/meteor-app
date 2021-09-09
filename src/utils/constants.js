@@ -1,4 +1,8 @@
-export const API_URL = 'https://api.data.gov.sg/v1/transport/traffic-images';
+export const TRAFFIC_API_URL =
+  'https://api.data.gov.sg/v1/transport/traffic-images';
+export const WEATHER_API_URL =
+  'https://api.data.gov.sg/v1/environment/2-hour-weather-forecast';
+
 // export const ITEMS_PER_PAGE = 30;
 
 export const DATA_BANK = [
