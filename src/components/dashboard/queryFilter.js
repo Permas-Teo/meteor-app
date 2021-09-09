@@ -24,12 +24,7 @@ export const QueryFilter = ({ date, setDate, time, setTime }) => {
       p={6}
       direction={'column'}
     >
-      <Heading
-        as={'h2'}
-        fontSize={{ base: 'xl', sm: '2xl' }}
-        textAlign={'center'}
-        my={5}
-      >
+      <Heading as={'h2'} fontSize={['lg', '2xl']} textAlign={'center'} my={5}>
         Live Filter
       </Heading>
 
