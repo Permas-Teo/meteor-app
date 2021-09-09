@@ -4,6 +4,7 @@ import { Box, Container, Flex, Text } from '@chakra-ui/react';
 import { QueryFilter } from '../components/dashboard/queryFilter';
 import { Alerts } from '../components/dashboard/alerts';
 import { fetchTraffic } from '../api/api';
+import { LocationList } from '../components/dashboard/locationList';
 
 const HomePage = () => {
   const [res, setRes] = useState('');
@@ -12,23 +13,12 @@ const HomePage = () => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
 
-  // useEffect(() => {
-  //   const refresh = () => {
-  //     let resultData = fetchUsers(sortToggle, minSalary, maxSalary, page);
-  //     resultData.then(resultData => {
-  //       setRes(resultData.results);
-  //       setTotalPages(resultData.totalPages);
-  //     });
-  //   };
-  //   refresh();
-  // }, [sortToggle, minSalary, maxSalary, page, requestUpdate]);
-
   useEffect(() => {
     const refresh = () => {
       let resultData = fetchTraffic(date, time);
       resultData.then(data => {
-        // setRes(resultData.results);
-        console.log(data);
+        setRes(data);
+        // console.log(data);
       });
     };
     refresh();
@@ -58,6 +48,8 @@ const HomePage = () => {
           </Box>
         </Flex>
       </Container>
+
+      {res && <LocationList data={res} />}
 
       {/* {res && (
         <SalaryTable

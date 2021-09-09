@@ -8,7 +8,6 @@ export const fetchTraffic = async (date = '', time = '') => {
     arg += 'T';
     arg += time;
 
-    console.log(arg);
     params.append('date_time', arg);
 
     let res = await fetch(API_URL + '?' + params.toString());

@@ -37,7 +37,7 @@ export const QueryFilter = ({ date, setDate, time, setTime }) => {
         <DatePicker onChange={onChangeDate} size={'large'} />
         <TimePicker
           onChange={onChangeTime}
-          defaultOpenValue={moment('00:00:00', 'HH:mm:ss')}
+          // defaultValue={moment('00:00:00', 'HH:mm:ss')}
           size={'large'}
         />
       </Stack>
