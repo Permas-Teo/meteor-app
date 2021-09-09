@@ -36,8 +36,8 @@ In the repository root folder, to run tests:
 
 ![Screenshot](public/pic.png)
 
-1. Live filter implementation, there is no need to click on a button to apply the filter.
-1. Timepicker is disabled until a valid date is selected by the Datepicker.
-1. Latest timestamp is queried (default api behaviour) when either or both Datepicker and Timepicker are unfilled.
-1. True Timestamp denotes actual timestamp returned by api call.
-1. The location data can be displayed via a Show/Hide toggle button.
+1. Live filter implementation, there is no need to click on a separate button to apply the filter(s).
+1. Timepicker is disabled until a valid date is selected with the Datepicker.
+1. Latest timestamp is queried (default api behaviour) when either or both Datepicker and Timepicker fields are unfilled.
+1. "True Timestamp" denotes the actual timestamp returned by api call.
+1. The location data is shown/hidden via a Show/Hide toggle button.
