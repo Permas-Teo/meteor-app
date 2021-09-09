@@ -41,7 +41,9 @@ export const Location = ({ singleItem, weatherData }) => {
       >
         <Flex>
           <Box py={[2, 0]} pl={[2, 0]}>
-            <Text fontSize={['md', '2xl']}>{closestLocation}</Text>
+            <Text fontSize={['md', '2xl']}>
+              {singleItem.camera_id + ' ' + closestLocation}
+            </Text>
           </Box>
           <Spacer />
           <Box py={[2, 0]} pr={[2, 0]}>

@@ -4,6 +4,7 @@ import { Box, Container, Flex } from '@chakra-ui/react';
 import { QueryFilter } from '../components/dashboard/queryFilter';
 import { fetchTraffic, fetchWeather } from '../api/api';
 import { LocationList } from '../components/dashboard/locationList';
+import { Timestamp } from '../components/dashboard/timestamp';
 
 const HomePage = () => {
   const [trafficData, setTrafficData] = useState('');
@@ -28,21 +29,18 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <Container maxWidth={'10xl'}>
-        <Flex flexWrap={'wrap'} justify="center">
-          <Box m={2}>
-            <QueryFilter
-              date={date}
-              setDate={setDate}
-              time={time}
-              setTime={setTime}
-            />
-          </Box>
-        </Flex>
-      </Container>
+      <QueryFilter
+        date={date}
+        setDate={setDate}
+        time={time}
+        setTime={setTime}
+      />
 
       {trafficData && weatherData && (
-        <LocationList trafficData={trafficData} weatherData={weatherData} />
+        <>
+          <Timestamp timestamp={trafficData.items[0].timestamp} />
+          <LocationList trafficData={trafficData} weatherData={weatherData} />
+        </>
       )}
     </Layout>
   );
