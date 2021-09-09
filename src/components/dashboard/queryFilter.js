@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Flex, Heading, Stack } from '@chakra-ui/react';
 import { DatePicker, TimePicker } from 'antd';
-// import moment from 'moment';
+import moment from 'moment';
 
 export const QueryFilter = ({ date, setDate, time, setTime }) => {
   function onChangeDate(date, dateString) {
@@ -38,6 +38,9 @@ export const QueryFilter = ({ date, setDate, time, setTime }) => {
                 onChange={onChangeDate}
                 size={'large'}
                 placeholder={'Date'}
+                disabledDate={current => {
+                  return moment() <= current;
+                }}
               />
               <TimePicker
                 onChange={onChangeTime}

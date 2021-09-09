@@ -9,14 +9,16 @@ export const LocationClicked = ({ singleItem, forecast }) => {
         <Divider mt={2} />
         <Box p={[0, 2]}>
           <Center>
-            <Image
-              src={getImageSrcFromForecast(forecast)}
-              boxSize={['50px', '80px']}
-            />
+            <VStack>
+              <Image
+                src={getImageSrcFromForecast(forecast)}
+                boxSize={['50px', '80px']}
+              />
+              <Text mt={2} fontSize={['md', 'xl']}>
+                {forecast}
+              </Text>
+            </VStack>
           </Center>
-          <Text mt={2} fontSize={['md', 'xl']}>
-            {forecast}
-          </Text>
         </Box>
         <Divider />
         <Box>
