@@ -12,7 +12,7 @@ import {
   Button,
   VStack,
 } from '@chakra-ui/react';
-import { fetchWeather } from '../../api/api';
+import { getImageSrcFromForecast } from '../../utils/utilFunctions';
 
 export const LocationClicked = ({ singleItem, forecast }) => {
   const [weather, setWeather] = useState('');
@@ -35,6 +35,12 @@ export const LocationClicked = ({ singleItem, forecast }) => {
       <VStack>
         <Divider mt={2} />
         <Box p={[0, 4]}>
+          <Center>
+            <Image
+              src={getImageSrcFromForecast(forecast)}
+              boxSize={['50px', '80px']}
+            />
+          </Center>
           <Text fontSize={['md', 'xl']}>{forecast}</Text>
         </Box>
         <Divider mb={2} />

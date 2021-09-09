@@ -33,3 +33,15 @@ export function getForecastFromLocation(location, forecasts) {
 
   return 'Not Available :(';
 }
+
+export function getImageSrcFromForecast(forecast) {
+  if (forecast.includes('Fair') || forecast.includes('Cloudy')) {
+    return '/fair.png';
+  } else if (forecast.includes('Thundery')) {
+    return '/storm.png';
+  } else if (forecast.includes('Rain')) {
+    return '/rain.png';
+  } else {
+    return '/anxiety.png';
+  }
+}
