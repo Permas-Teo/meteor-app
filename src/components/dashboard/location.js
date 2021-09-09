@@ -11,6 +11,7 @@ import {
   VStack,
   useBreakpointValue,
 } from '@chakra-ui/react';
+import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
 import {
   getClosestLocation,
   getForecastFromLocation,
@@ -47,8 +48,14 @@ export const Location = ({ singleItem, weatherData }) => {
           </Box>
           <Spacer />
           <Box py={[2, 0]} pr={[2, 0]}>
-            <Button onClick={() => setOpen(true)} size={buttonSize}>
-              Show
+            <Button
+              onClick={() => (open ? setOpen(false) : setOpen(true))}
+              size={buttonSize}
+              colorScheme="pink"
+              variant={open ? 'ghost' : 'ghost'}
+              rightIcon={open ? <TriangleUpIcon /> : <TriangleDownIcon />}
+            >
+              {open ? 'Hide' : 'Show'}
             </Button>
           </Box>
         </Flex>

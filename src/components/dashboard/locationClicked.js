@@ -33,7 +33,7 @@ export const LocationClicked = ({ singleItem, forecast }) => {
   return (
     <Center>
       <VStack>
-        <Divider />
+        <Divider mt={2} />
         <Box p={[0, 4]}>
           <Text fontSize={['md', 'xl']}>{forecast}</Text>
         </Box>
