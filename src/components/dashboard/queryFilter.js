@@ -1,28 +1,22 @@
 import React from 'react';
-import {
-  Button,
-  Container,
-  Center,
-  FormControl,
-  Heading,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
-  Stack,
-} from '@chakra-ui/react';
+import { Button, Container, Center, Heading, Stack } from '@chakra-ui/react';
 
-export const QueryFilter = ({
-  setPage,
-  minSalary,
-  setMinSalary,
-  maxSalary,
-  setMaxSalary,
-}) => {
+import { DatePicker, TimePicker } from 'antd';
+import moment from 'moment';
+
+export const QueryFilter = ({ date, setDate, time, setTime }) => {
+  function onChangeDate(date, dateString) {
+    console.log(date, dateString);
+    setDate(dateString);
+  }
+
+  function onChangeTime(time, timeString) {
+    console.log(time, timeString);
+    setTime(timeString);
+  }
+
   return (
     <Container
-      height={'270px'}
       maxW={'md'}
       bg={'whiteAlpha.100'}
       boxShadow={'xl'}
@@ -40,62 +34,12 @@ export const QueryFilter = ({
       </Heading>
 
       <Stack direction={'column'} as={'form'} spacing={'12px'}>
-        <FormControl>
-          <NumberInput
-            size="md"
-            min={0}
-            step={100}
-            onChange={e => {
-              setMinSalary(e);
-              setPage(0);
-            }}
-            value={minSalary}
-          >
-            <NumberInputField
-              borderColor={'gray.300'}
-              placeholder={'Min Salary'}
-            />
-            <NumberInputStepper>
-              <NumberIncrementStepper />
-              <NumberDecrementStepper />
-            </NumberInputStepper>
-          </NumberInput>
-        </FormControl>
-        <FormControl>
-          <NumberInput
-            size="md"
-            min={minSalary ? minSalary : 0}
-            step={100}
-            onChange={e => {
-              setMaxSalary(e);
-              setPage(0);
-            }}
-            value={maxSalary}
-          >
-            <NumberInputField
-              borderColor={'gray.300'}
-              placeholder={'Max Salary'}
-            />
-            <NumberInputStepper>
-              <NumberIncrementStepper />
-              <NumberDecrementStepper />
-            </NumberInputStepper>
-          </NumberInput>
-        </FormControl>
-        <Center>
-          <Button
-            m={2}
-            onClick={() => {
-              if (minSalary || maxSalary) {
-                setMaxSalary('');
-                setMinSalary('');
-                setPage(0);
-              }
-            }}
-          >
-            {'Reset'}
-          </Button>
-        </Center>
+        <DatePicker onChange={onChangeDate} size={'large'} />
+        <TimePicker
+          onChange={onChangeTime}
+          defaultOpenValue={moment('00:00:00', 'HH:mm:ss')}
+          size={'large'}
+        />
       </Stack>
     </Container>
   );
