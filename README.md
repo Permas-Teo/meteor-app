@@ -32,7 +32,7 @@ In the repository root folder, to run tests:
 
 `npm test`
 
-## 2. Assignment Writeup
+## 3. Assignment Writeup
 
 ![Screenshot](public/pic.png)
 
